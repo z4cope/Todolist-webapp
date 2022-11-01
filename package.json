@@ -1,0 +1,35 @@
+{
+  "name": "Todolist-webapp",
+  "version": "1.0.0",
+  "description": "> A todo list web app that you can use on your browser.",
+  "private": "true",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "webpack-cli": "^4.10.0",
+    "webpack": "^5.74.0"
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open --mode development",
+    "build": "webpack --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/z4cope/Todolist-webapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/z4cope/Todolist-webapp/issues"
+  },
+  "homepage": "https://github.com/z4cope/Todolist-webapp#readme"
+}
