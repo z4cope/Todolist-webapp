@@ -27,6 +27,7 @@ To get a local copy up and running follow these simple example steps.
 - Open you code editor.
 - Press cmd + shift + P and type gitclone and choose the first option.
 - Paste the repo link inside the field and press enter.
+- Run the command npm start to run the project on your localhost.
 
 ## Author
 
