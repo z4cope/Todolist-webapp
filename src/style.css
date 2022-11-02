@@ -55,6 +55,13 @@ h1 {
   cursor: pointer;
 }
 
+.todo-add svg {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%) scale(0.5);
+}
+
 .todo-head svg:hover {
   transform: rotate(360deg) scale(0.8);
 }
@@ -71,13 +78,6 @@ h1 {
   border: none;
   width: 100%;
   padding: 1rem;
-}
-
-.todo-add svg {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%) scale(0.5);
 }
 
 li {

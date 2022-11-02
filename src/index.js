@@ -1,6 +1,6 @@
-import "./style.css";
-import Tasks from "./modules/tasks";
+import './style.css';
+import Tasks from './modules/tasks.js';
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener('DOMContentLoaded', () => {
   Tasks.tasksGenerator();
 });

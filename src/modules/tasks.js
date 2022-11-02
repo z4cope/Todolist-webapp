@@ -1,20 +1,20 @@
 class Tasks {
   static tasksGenerator() {
-    const todoWrapper = document.querySelector(".todo-list");
+    const todoWrapper = document.querySelector('.todo-list');
     const tasks = [
       {
         index: 0,
-        name: "Go to the gym",
+        name: 'Go to the gym',
         isCompleted: false,
       },
       {
         index: 0,
-        name: "Wash the dishes",
+        name: 'Wash the dishes',
         isCompleted: false,
       },
       {
         index: 0,
-        name: "Complete todo list app",
+        name: 'Complete todo list app',
         isCompleted: false,
       },
     ];
@@ -30,7 +30,6 @@ class Tasks {
       </li>
       `;
     });
-    console.log(tasks);
   }
 }
 
