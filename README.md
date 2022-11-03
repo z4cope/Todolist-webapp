@@ -1,17 +1,18 @@
-# Todolist
+# Todo list web app
 
-> A todo list web app that you can use on your browser.
+> A simple web app that helps the user to organize his tasks, rearrange them, check a task if completed and delete them.
 
 ## Built With
 
 - HTML
 - CSS
-- ES6
+- Javascript
 - Webpack
+- Linters
 
-## Project Link on Github pages
+## Project Link on Github
 
-https://github.com/z4cope/webpack-boilerplate
+https://github.com/z4cope/Todolist-webapp
 
 ## Getting Started
 
@@ -26,6 +27,7 @@ To get a local copy up and running follow these simple example steps.
 - Open you code editor.
 - Press cmd + shift + P and type gitclone and choose the first option.
 - Paste the repo link inside the field and press enter.
+- Run the command npm start to run the project on your localhost.
 
 ## Author
 
@@ -37,7 +39,7 @@ To get a local copy up and running follow these simple example steps.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/z4cope/webpack-boilerplate/issues).
+Feel free to check the [issues page](https://github.com/z4cope/Todolist-webapp/issues).
 
 ## Show your support
 
@@ -45,7 +47,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Microverse assesments.
+- Microverse designs.
 
 ## 📝 License
 
