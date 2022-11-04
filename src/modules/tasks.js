@@ -1,41 +1,42 @@
-import TaskConstructor from "./taskConstructor";
-import HandleLocalStorage from "./handleLocalStorage";
-import TaskDeletion from "./taskDeletion";
+import TaskConstructor from './taskConstructor.js';
+import HandleLocalStorage from './handleLocalStorage.js';
+import TaskDeletion from './taskDeletion.js';
 
 class Tasks {
-  //Getting the task from the field
+  // Getting the task from the field
   static tasksGenerator() {
-    const taskField = document.querySelector("#task-field");
+    const taskField = document.querySelector('#task-field');
     let tasksArr;
-    if (localStorage.getItem("tasks") === null) {
+    if (localStorage.getItem('tasks') === null) {
       tasksArr = [];
     } else {
-      const lsItems = JSON.parse(localStorage.getItem("tasks"));
+      const lsItems = JSON.parse(localStorage.getItem('tasks'));
       tasksArr = lsItems;
     }
 
-    taskField.addEventListener("keypress", (e) => {
-      if (e.target.value !== "" && e.key === "Enter") {
+    taskField.addEventListener('keypress', (e) => {
+      if (e.target.value !== '' && e.key === 'Enter') {
         const userTask = new TaskConstructor(
           tasksArr.length,
           e.target.value,
-          false
+          false,
         );
         tasksArr.push(userTask);
-        e.target.value = "";
-        //Ivoking adding items to the local storage function
+        e.target.value = '';
+        // Ivoking adding items to the local storage function
         HandleLocalStorage.addTasksToLs(tasksArr);
 
         window.location.reload();
       }
     });
     tasksArr.forEach((task) => Tasks.setTasksInUi(task));
-    //test
+    // test
     TaskDeletion.delTaskFromUi(tasksArr);
   }
-  //setting tasks in the UI
+
+  // setting tasks in the UI
   static setTasksInUi(task) {
-    const todoWrapper = document.querySelector(".todo-list");
+    const todoWrapper = document.querySelector('.todo-list');
     todoWrapper.innerHTML += `
       <li data-id="${task.index}">
         <div>
