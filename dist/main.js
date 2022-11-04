@@ -115,7 +115,37 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_tasks_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/tasks.js */ \"./src/modules/tasks.js\");\n\n\n\nwindow.addEventListener('DOMContentLoaded', () => {\n  _modules_tasks_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].tasksGenerator();\n});\n\n\n//# sourceURL=webpack://Todolist-webapp/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_tasks_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/tasks.js */ \"./src/modules/tasks.js\");\n/* harmony import */ var _modules_taskDeletion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/taskDeletion */ \"./src/modules/taskDeletion.js\");\n\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", _modules_tasks_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].tasksGenerator);\n\n//Invoking task deletion on tasks initiation\n_modules_taskDeletion__WEBPACK_IMPORTED_MODULE_2__[\"default\"].delTaskFromUi();\n\n\n//# sourceURL=webpack://Todolist-webapp/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/addItemsToLs.js":
+/*!*************************************!*\
+  !*** ./src/modules/addItemsToLs.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass HandleLocalStorage {\n  static addTasksToLs(tasksArr) {\n    window.localStorage.setItem(\"tasks\", JSON.stringify(tasksArr));\n  }\n  static removeItemsFromLs(task, tasksArr) {}\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HandleLocalStorage);\n\n\n//# sourceURL=webpack://Todolist-webapp/./src/modules/addItemsToLs.js?");
+
+/***/ }),
+
+/***/ "./src/modules/taskConstructor.js":
+/*!****************************************!*\
+  !*** ./src/modules/taskConstructor.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass TaskConstructor {\n  constructor(index, name, isCompleted = false) {\n    this.index = index;\n    this.name = name;\n    this.isCompleted = isCompleted;\n  }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TaskConstructor);\n\n\n//# sourceURL=webpack://Todolist-webapp/./src/modules/taskConstructor.js?");
+
+/***/ }),
+
+/***/ "./src/modules/taskDeletion.js":
+/*!*************************************!*\
+  !*** ./src/modules/taskDeletion.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _addItemsToLs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addItemsToLs */ \"./src/modules/addItemsToLs.js\");\n\n\nclass TaskDeletion {\n  //Delete task from the UI\n  static delTaskFromUi() {\n    const tasksList = document.querySelector(\".todo-list\");\n    console.log(\"dede\");\n    if (tasksList.hasChildNodes()) {\n      console.log(tasksList);\n      const editIcon = document.querySelectorAll(\".edit-icon\");\n      editIcon.forEach((icon) => {\n        icon.addEventListener(\"click\", (e) => {\n          if (e.target.classList.contains(\"edit-icon\")) {\n            e.target.parentElement.remove();\n          }\n        });\n      });\n    }\n  }\n  //Delete item from local storage\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TaskDeletion);\n\n\n//# sourceURL=webpack://Todolist-webapp/./src/modules/taskDeletion.js?");
 
 /***/ }),
 
@@ -125,7 +155,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass Tasks {\n  static tasksGenerator() {\n    const todoWrapper = document.querySelector('.todo-list');\n    const tasks = [\n      {\n        index: 0,\n        name: 'Go to the gym',\n        isCompleted: false,\n      },\n      {\n        index: 0,\n        name: 'Wash the dishes',\n        isCompleted: false,\n      },\n      {\n        index: 0,\n        name: 'Complete todo list app',\n        isCompleted: false,\n      },\n    ];\n    tasks.forEach((task, i) => {\n      task.index = i;\n      todoWrapper.innerHTML += `\n      <li>\n        <div>\n          <input type=\"checkbox\" />\n          ${task.name}\n        </div>\n        <svg class=\"edit-icon\" width=\"32\" height=\"32\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2Z\"/></svg>\n      </li>\n      `;\n    });\n  }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Tasks);\n\n\n//# sourceURL=webpack://Todolist-webapp/./src/modules/tasks.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _taskConstructor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./taskConstructor */ \"./src/modules/taskConstructor.js\");\n/* harmony import */ var _taskDeletion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./taskDeletion */ \"./src/modules/taskDeletion.js\");\n/* harmony import */ var _addItemsToLs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./addItemsToLs */ \"./src/modules/addItemsToLs.js\");\n\n\n\n\nclass Tasks {\n  //Getting the task from the field\n  static tasksGenerator() {\n    const taskField = document.querySelector(\"#task-field\");\n    let tasksArr;\n    if (localStorage.getItem(\"tasks\") === null) {\n      tasksArr = [];\n    } else {\n      const lsItems = JSON.parse(localStorage.getItem(\"tasks\"));\n      tasksArr = lsItems;\n    }\n\n    taskField.addEventListener(\"keypress\", (e) => {\n      if (e.target.value !== \"\" && e.key === \"Enter\") {\n        const userTask = new _taskConstructor__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\n          tasksArr.length,\n          e.target.value,\n          false\n        );\n        tasksArr.push(userTask);\n        e.target.value = \"\";\n\n        //Ivoking adding items to the local storage function\n        _addItemsToLs__WEBPACK_IMPORTED_MODULE_2__[\"default\"].addTasksToLs(tasksArr);\n        //Refresh document\n        window.location.reload();\n      }\n    });\n    tasksArr.forEach((task) => Tasks.setTasksInUi(task));\n  }\n  //setting tasks in the UI\n  static setTasksInUi(task) {\n    const todoWrapper = document.querySelector(\".todo-list\");\n    todoWrapper.innerHTML += `\n      <li>\n        <div>\n          <input type=\"checkbox\" />\n          ${task.name}\n        </div>\n        <svg class=\"edit-icon\" width=\"32\" height=\"32\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2Z\"/></svg>\n      </li>\n    `;\n  }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Tasks);\n\n\n//# sourceURL=webpack://Todolist-webapp/./src/modules/tasks.js?");
 
 /***/ })
 

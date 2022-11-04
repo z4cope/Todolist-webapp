@@ -1,6 +1,8 @@
 import './style.css';
 import Tasks from './modules/tasks.js';
+import HandleLocalStorage from './modules/handleLocalStorage.js';
 
-window.addEventListener('DOMContentLoaded', () => {
-  Tasks.tasksGenerator();
-});
+document.addEventListener('DOMContentLoaded', Tasks.tasksGenerator);
+
+// Clear all items
+HandleLocalStorage.clearAllItems();

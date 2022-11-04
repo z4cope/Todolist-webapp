@@ -90,6 +90,16 @@ li {
   padding: 1rem;
 }
 
+li div {
+  display: flex;
+  align-items: center;
+}
+
+li div h2 {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
 input[type="checkbox"] {
   cursor: pointer;
   margin-right: 0.5rem;
