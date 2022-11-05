@@ -10,7 +10,6 @@ class TaskDeletion {
         icon.addEventListener('click', (e) => {
           if (e.target.classList.contains('edit-icon')) {
             e.target.parentElement.remove();
-
             HandleLocalStorage.removeItemsFromLs(
               tasksArr,
               e.target.parentElement.dataset.id,
@@ -20,9 +19,6 @@ class TaskDeletion {
       });
     }
   }
-
-  // Delete item from local storage
-  static delTaskFromLs() {}
 }
 
 export default TaskDeletion;

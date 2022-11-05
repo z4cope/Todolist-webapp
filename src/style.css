@@ -88,6 +88,19 @@ li {
   align-items: center;
   border-top: 1px solid rgb(198, 198, 198);
   padding: 1rem;
+  position: relative;
+}
+
+.strike {
+  width: 40%;
+  height: 0.1rem;
+  background: red;
+  position: absolute;
+}
+
+.check-icon {
+  display: none;
+  margin-right: 0.5rem;
 }
 
 li div {

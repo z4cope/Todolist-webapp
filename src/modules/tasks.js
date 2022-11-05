@@ -1,6 +1,7 @@
 import TaskConstructor from './taskConstructor.js';
 import HandleLocalStorage from './handleLocalStorage.js';
 import TaskDeletion from './taskDeletion.js';
+import ComplatedTasks from './completedTasks.js';
 
 class Tasks {
   // Getting the task from the field
@@ -25,13 +26,18 @@ class Tasks {
         e.target.value = '';
         // Ivoking adding items to the local storage function
         HandleLocalStorage.addTasksToLs(tasksArr);
-
         window.location.reload();
       }
     });
     tasksArr.forEach((task) => Tasks.setTasksInUi(task));
-    // test
+    // Delete task from UI
     TaskDeletion.delTaskFromUi(tasksArr);
+    // test
+    ComplatedTasks.checkTask(tasksArr);
+    // test2
+    ComplatedTasks.taskDecoration(tasksArr);
+    // test3
+    HandleLocalStorage.clearAllCompleted(tasksArr);
   }
 
   // setting tasks in the UI
@@ -40,11 +46,13 @@ class Tasks {
     todoWrapper.innerHTML += `
       <li data-id="${task.index}">
         <div>
-          <input type="checkbox" />
-          <h2 contenteditable="true">${task.name}</h2>
+          <input name="checkbox" type="checkbox" />
+          <img class="check-icon" src="https://api.iconify.design/ic:baseline-check.svg" />
+          <h2 class="task-name" contenteditable="true">${task.name}</h2>
         </div>
         <img class="edit-icon" src="https://api.iconify.design/material-symbols:delete-outline.svg" />
-      </li>
+        
+        </li>
     `;
   }
 }
