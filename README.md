@@ -2,7 +2,7 @@
 
 ## Todo list web app
 
-> A simple web app that helps the user to organize his tasks, rearrange them, check a task if completed and delete the completed ones.
+> A simple web app that helps the user to organize his tasks, check a task if completed, and delete the completed ones.
 
 ## SCREEN SHOT
 
