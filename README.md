@@ -24,7 +24,7 @@
 - Webpack
 - Linters
 
-## Project Link on Github pages
+## Project Link on Github
 
 https://github.com/z4cope/Todolist-webapp
 
