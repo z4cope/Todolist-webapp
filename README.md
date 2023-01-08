@@ -1,16 +1,30 @@
-# Todo list web app
+# Project Name
 
-> A simple web app that helps the user to organize his tasks, rearrange them, check a task if completed and delete them.
+## Todo list web app
+
+> A simple web app that helps the user to organize his tasks, rearrange them, check a task if completed and delete the completed ones.
+
+## SCREEN SHOT
+
+![screenshot](./src/assets/Todo-list.png)
 
 ## Built With
+
+### Major languages
 
 - HTML
 - CSS
 - Javascript
+
+### Technologies used
+
+- Github
+- Git
+- Visual Studio Code
 - Webpack
 - Linters
 
-## Project Link on Github
+## Project Link on Github pages
 
 https://github.com/z4cope/Todolist-webapp
 
@@ -24,7 +38,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-- Open you code editor.
+- Open your code editor.
 - Press cmd + shift + P and type gitclone and choose the first option.
 - Paste the repo link inside the field and press enter.
 - Run the command npm start to run the project on your localhost.
@@ -33,7 +47,7 @@ To get a local copy up and running follow these simple example steps.
 
 - GitHub: [@githubhandle](https://github.com/z4cope)
 - Twitter: [@twitterhandle](https://twitter.com/mokhaledev)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohamed-khaled-10138a1b7/)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mookhaled)
 
 ## 🤝 Contributing
 
@@ -51,4 +65,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-You can freely use this project for ethical use and educational purposes.
+This project is [MIT](./LICENCE) licensed.
